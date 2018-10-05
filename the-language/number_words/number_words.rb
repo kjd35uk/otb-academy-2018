@@ -30,6 +30,7 @@ def number_words(num)
     90 => "ninety",
     100 => "one hundred",
     1000 => "one thousand",
+    1000000 => "one million",
   }
   if number_strings.include?(num)
     answer << number_strings[num]
@@ -39,8 +40,10 @@ def number_words(num)
     answer << "#{number_strings[num / 100]} hundred and " + number_words(num % 100)
   elsif num <=20000
     answer << "#{number_strings[num / 1000]} thousand and " + number_words(num % 1000)
-  else
+  elsif num <= 1000000
     answer << number_words(num / 1000) + " thousand and " + number_words(num % 1000)
+  else
+    answer << number_words(num / 1000000) + " million and " + number_words(num % 1000000)
 end
 pattern = /\ and(?=.*\ and)/
   answer.gsub(pattern, "").gsub(/ and -/, "")

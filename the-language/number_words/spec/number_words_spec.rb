@@ -124,4 +124,14 @@ RSpec.describe "number words" do
     expect(number_words (234865)).to eq "two hundred thirty-four thousand eight hundred and sixty-five"
     expect(number_words (999999)).to eq "nine hundred ninety-nine thousand nine hundred and ninety-nine"
   end
+
+  it "returns the string for 1,000,000" do
+    expect(number_words (1000000)).to eq "one million"
+  end
+
+  it "returns the strings for the one millions" do
+    expect(number_words (1000684)).to eq "one million six hundred and eighty-four"
+    expect(number_words (1273849)).to eq "one million two hundred seventy-three thousand eight hundred and forty-nine"
+    expect(number_words (1938476)).to eq "one million nine hundred thirty-eight thousand four hundred and seventy-six"
+  end
 end
