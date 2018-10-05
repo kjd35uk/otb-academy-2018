@@ -63,4 +63,10 @@ RSpec.describe "number words" do
     expect(number_words (115)).to eq "one hundred and fifteen"
     expect(number_words (120)).to eq "one hundred and twenty"
   end
+
+  it "returns the strings for the one hundreds" do
+    expect(number_words (121)).to eq "one hundred and twenty-one"
+    expect(number_words (132)).to eq "one hundred and thirty-two"
+    expect(number_words (169)).to eq "one hundred and sixty-nine"
+  end
 end

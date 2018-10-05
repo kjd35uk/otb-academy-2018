@@ -34,6 +34,6 @@ def number_words(num)
   else num < 100 ?
     "#{number_strings[num - (num % 10)]}-#{number_strings[num % 10]}"
   :
-    "#{number_strings[100]} and #{number_strings[(num - 100)]}"
+    "one hundred and " + number_words(num-100)
 end
 end
