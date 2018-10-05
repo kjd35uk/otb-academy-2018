@@ -20,7 +20,14 @@ def number_words(num)
     18 => "eighteen",
     19 => "nineteen",
     20 => "twenty",
+    30 => "thirty",
+    40 => "forty",
+    50 => "fifty",
+    60 => "sixty",
+    70 => "seventy",
+    80 => "eighty",
+    90 => "ninety",
   }
   number_strings.include?(num) ? number_strings[num] :
-  "#{number_strings[20]}-#{number_strings[num % 20]}"
+  "#{number_strings[num - (num % 10)]}-#{number_strings[num % 10]}"
 end

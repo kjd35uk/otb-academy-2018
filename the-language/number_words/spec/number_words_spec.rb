@@ -28,8 +28,24 @@ RSpec.describe "number_words" do
   end
 
   it "returns the strings for the twenties" do
-    expect(number_words (21)).to eq "twenty-one"
+    expect(number_words (22)).to eq "twenty-two"
     expect(number_words (23)).to eq "twenty-three"
     expect(number_words (27)).to eq "twenty-seven"
   end
+
+  it "returns the strings for the thirties" do
+    expect(number_words (31)).to eq "thirty-one"
+    expect(number_words (36)).to eq "thirty-six"
+    expect(number_words (39)).to eq "thirty-nine"
+  end
+
+  it "returns the string for the forties to the nineties" do
+    expect(number_words (44)).to eq "forty-four"
+    expect(number_words (55)).to eq "fifty-five"
+    expect(number_words (66)).to eq "sixty-six"
+    expect(number_words (77)).to eq "seventy-seven"
+    expect(number_words (88)).to eq "eighty-eight"
+    expect(number_words (99)).to eq "ninety-nine"
+  end
+
 end
