@@ -29,5 +29,7 @@ RSpec.describe "number_words" do
 
   it "returns the strings for the twenties" do
     expect(number_words (21)).to eq "twenty-one"
+    expect(number_words (23)).to eq "twenty-three"
+    expect(number_words (27)).to eq "twenty-seven"
   end
 end

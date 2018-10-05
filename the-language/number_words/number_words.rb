@@ -22,5 +22,5 @@ def number_words(num)
     20 => "twenty",
   }
   number_strings.include?(num) ? number_strings[num] :
-  "#{number_strings[20]}-#{number_strings[1]}"
+  "#{number_strings[20]}-#{number_strings[num % 20]}"
 end
