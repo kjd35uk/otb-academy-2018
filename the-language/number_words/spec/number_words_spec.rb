@@ -101,4 +101,27 @@ RSpec.describe "number words" do
   it "returns the string for 2000" do
     expect(number_words (2000)).to eq "two thousand"
   end
+
+  it "returns the strings for the two to nineteen thousands" do
+    expect(number_words (2057)).to eq "two thousand and fifty-seven"
+    expect(number_words (3148)).to eq "three thousand one hundred and forty-eight"
+    expect(number_words (14927)).to eq "fourteen thousand nine hundred and twenty-seven"
+    expect(number_words (19274)).to eq "nineteen thousand two hundred and seventy-four"
+  end
+
+  it "returns the string for 20000" do
+    expect(number_words (20000)).to eq "twenty thousand"
+  end
+
+  it "returns the strings for 20,001 to 100,000" do
+    expect(number_words (21372)).to eq "twenty-one thousand three hundred and seventy-two"
+    expect(number_words (82938)).to eq "eighty-two thousand nine hundred and thirty-eight"
+    expect(number_words (90926)).to eq "ninety thousand nine hundred and twenty-six"
+  end
+
+  it "returns the strings for the hundred thousands" do
+    expect(number_words (100273)).to eq "one hundred thousand two hundred and seventy-three"
+    expect(number_words (234865)).to eq "two hundred thirty-four thousand eight hundred and sixty-five"
+    expect(number_words (999999)).to eq "nine hundred ninety-nine thousand nine hundred and ninety-nine"
+  end
 end
