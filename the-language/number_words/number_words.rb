@@ -38,14 +38,12 @@ def number_words(num)
   elsif num < 100
     answer << "#{number_strings[num - (num % 10)]}-#{number_strings[num % 10]}"
   elsif num < 1000
-    answer << "#{number_strings[num / 100]} hundred and " + number_words(num % 100)
-  elsif num <=20000
-    answer << "#{number_strings[num / 1000]} thousand and " + number_words(num % 1000)
-  elsif num <= 1000000
+    answer << number_words(num / 100) + " hundred and " + number_words(num % 100)
+  elsif num < 1000000
     answer << number_words(num / 1000) + " thousand and " + number_words(num % 1000)
   else
     answer << number_words(num / 1000000) + " million and " + number_words(num % 1000000)
-end
-pattern = /\ and(?=.*\ and)/
+  end
+  pattern = /\ and(?=.*\ and)/
   answer.gsub(pattern, "").gsub(/ and -/, "").gsub(/million and/, "million")
 end
