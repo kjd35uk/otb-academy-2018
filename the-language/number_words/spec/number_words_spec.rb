@@ -134,4 +134,26 @@ RSpec.describe "number words" do
     expect(number_words (1273849)).to eq "one million two hundred seventy-three thousand eight hundred and forty-nine"
     expect(number_words (1938476)).to eq "one million nine hundred thirty-eight thousand four hundred and seventy-six"
   end
+
+  it "returns the strings for the two to twenty millions" do
+    expect(number_words (2000000)).to eq "two million"
+    expect(number_words (3859483)).to eq "three million eight hundred fifty-nine thousand four hundred and eighty-three"
+    expect(number_words (9739275)).to eq "nine million seven hundred thirty-nine thousand two hundred and seventy-five"
+    expect(number_words (17485930)).to eq "seventeen million four hundred eighty-five thousand nine hundred and thirty"
+    expect(number_words (20324756)).to eq "twenty million three hundred twenty-four thousand seven hundred and fifty-six"
+  end
+
+  it "returns the strings for the thirty to ninety millions" do
+    expect(number_words (30000000)).to eq "thirty million"
+    expect(number_words (48059483)).to eq "forty-eight million fifty-nine thousand four hundred and eighty-three"
+    expect(number_words (82938000)).to eq "eighty-two million nine hundred thirty-eight thousand"
+    expect(number_words (99999999)).to eq "ninety-nine million nine hundred ninety-nine thousand nine hundred and ninety-nine"
+  end
+
+  it "returns the strings for the hundred millions" do
+    expect(number_words (182938475)).to eq "one hundred eighty-two million nine hundred thirty-eight thousand four hundred and seventy-five"
+    expect(number_words (300000000)).to eq "three hundred million"
+    expect(number_words (726374837)).to eq "seven hundred twenty-six million three hundred seventy-four thousand eight hundred and thirty-seven"
+    expect(number_words (800900421)).to eq "eight hundred million nine hundred thousand four hundred and twenty-one"
+  end
 end

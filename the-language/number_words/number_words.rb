@@ -46,5 +46,5 @@ def number_words(num)
     answer << number_words(num / 1000000) + " million and " + number_words(num % 1000000)
 end
 pattern = /\ and(?=.*\ and)/
-  answer.gsub(pattern, "").gsub(/ and -/, "")
+  answer.gsub(pattern, "").gsub(/ and -/, "").gsub(/million and/, "million")
 end
