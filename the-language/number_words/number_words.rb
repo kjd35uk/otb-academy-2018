@@ -41,7 +41,7 @@ def number_words(num)
     answer << "#{number_strings[num / 1000]} thousand and " + number_words(num % 1000)
 end
 pattern = /\ and(?=.*\ and)/
-answer.gsub(pattern, "")
+answer.gsub(pattern, "").gsub(/ and -/, "")
 
 
 end

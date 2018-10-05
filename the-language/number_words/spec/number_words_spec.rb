@@ -97,4 +97,8 @@ RSpec.describe "number words" do
     expect(number_words (1042)).to eq "one thousand and forty-two"
     expect(number_words (1782)).to eq "one thousand seven hundred and eighty-two"
   end
+
+  it "returns the string for 2000" do
+    expect(number_words (2000)).to eq "two thousand"
+  end
 end
