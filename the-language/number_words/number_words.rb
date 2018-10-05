@@ -31,6 +31,7 @@ def number_words(num)
     100 => "one hundred",
     1000 => "one thousand",
     1000000 => "one million",
+    1000000000 => "one billion",
   }
   if number_strings.include?(num)
     answer << number_strings[num]
