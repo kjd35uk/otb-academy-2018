@@ -28,6 +28,11 @@ def number_words(num)
     80 => "eighty",
     90 => "ninety",
   }
-  number_strings.include?(num) ? number_strings[num] :
-  "#{number_strings[num - (num % 10)]}-#{number_strings[num % 10]}"
+  if number_strings.include?(num)
+    number_strings[num]
+  else num < 100 ?
+    "#{number_strings[num - (num % 10)]}-#{number_strings[num % 10]}"
+ :
+    "#{number_strings[num / 100]} hundred"
+end
 end

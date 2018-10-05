@@ -1,6 +1,6 @@
 require_relative '../number_words'
 
-RSpec.describe "number_words" do
+RSpec.describe "number words" do
   it "returns the string for 1" do
     expect(number_words (1)).to eq "one"
   end
@@ -46,6 +46,10 @@ RSpec.describe "number_words" do
     expect(number_words (77)).to eq "seventy-seven"
     expect(number_words (88)).to eq "eighty-eight"
     expect(number_words (99)).to eq "ninety-nine"
+  end
+
+  it "returns the string for 100" do
+    expect(number_words (100)).to eq "one hundred"
   end
 
 end
