@@ -27,13 +27,16 @@ def number_words(num)
     70 => "seventy",
     80 => "eighty",
     90 => "ninety",
-    100 => "one hundred"
+    100 => "one hundred",
+    1000 => "one thousand",
   }
   if number_strings.include?(num)
     number_strings[num]
-  else num < 100 ?
+  elsif num < 100
     "#{number_strings[num - (num % 10)]}-#{number_strings[num % 10]}"
-  :
-    "#{number_strings[num / 100]} hundred and " + number_words(num % 100)
+  elsif num < 1000
+      "#{number_strings[num / 100]} hundred and " + number_words(num % 100)
+  else
+    "#{number_strings[num / 1000]} thousand and " + number_words(num % 1000)
 end
 end

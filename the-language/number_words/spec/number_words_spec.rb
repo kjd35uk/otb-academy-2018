@@ -81,4 +81,14 @@ RSpec.describe "number words" do
     expect(number_words (456)).to eq "four hundred and fifty-six"
     expect(number_words (788)).to eq "seven hundred and eighty-eight"
   end
+
+  it "returns the strings for 1000" do
+    expect(number_words (1000)).to eq "one thousand"
+  end
+
+  it "returns the strings for the low one thousands" do
+    expect(number_words (1001)).to eq "one thousand and one"
+    expect(number_words (1007)).to eq "one thousand and seven"
+    expect(number_words (1019)).to eq "one thousand and nineteen"
+  end
 end
