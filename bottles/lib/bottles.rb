@@ -8,27 +8,49 @@ class Bottles
   end
 
   def verse(number)
-    case number
-    when 0
       <<~VERSE
-        No more bottles of beer on the wall, no more bottles of beer.
-        Go to the store and buy some more, 99 bottles of beer on the wall.
+        #{amount(number).capitalize} #{container(number)} of beer on the wall, #{amount(number)} #{container(number)} of beer.
+        #{second_line_start(number)}, #{amount(successor(number))} #{container(number - 1)} of beer on the wall.
         VERSE
-    when 1
-      <<~VERSE
-        1 bottle of beer on the wall, 1 bottle of beer.
-        Take it down and pass it around, no more bottles of beer on the wall.
-        VERSE
-    when 2
-      <<~VERSE
-        2 bottles of beer on the wall, 2 bottles of beer.
-        Take one down and pass it around, 1 bottle of beer on the wall.
-        VERSE
+  end
+
+  def container(number)
+    if number == 1
+      "bottle"
     else
-      <<~VERSE
-        #{number} bottles of beer on the wall, #{number} bottles of beer.
-        Take one down and pass it around, #{number - 1} bottles of beer on the wall.
-        VERSE
+      "bottles"
+    end
+  end
+
+  def pronoun(number)
+    if number == 1
+      "it"
+    else
+      "one"
+    end
+  end
+
+  def amount(number)
+    if number == 0
+      "no more"
+    else
+      number.to_s
+    end
+  end
+
+  def successor(number)
+    if number == 0
+      99
+    else
+      number - 1
+    end
+  end
+
+  def second_line_start(number)
+    if number == 0
+      "Go to the store and buy some more"
+    else
+      "Take #{pronoun(number)} down and pass it around"
     end
   end
 end
