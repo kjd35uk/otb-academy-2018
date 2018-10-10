@@ -13,7 +13,6 @@ VERSE
   end
 
   it "can sing another typical verse" do
-    skip
     expected = <<-VERSE
 3 bottles of beer on the wall, 3 bottles of beer.
 Take one down and pass it around, 2 bottles of beer on the wall.
@@ -22,7 +21,6 @@ VERSE
   end
 
   it "can sing about 2 bottles" do
-    skip
     expected = <<-VERSE
 2 bottles of beer on the wall, 2 bottles of beer.
 Take one down and pass it around, 1 bottle of beer on the wall.
