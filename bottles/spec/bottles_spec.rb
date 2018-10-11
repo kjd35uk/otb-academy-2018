@@ -348,9 +348,9 @@ Take one down and pass it around, 8 bottles of beer on the wall.
 Take one down and pass it around, 7 bottles of beer on the wall.
 
 7 bottles of beer on the wall, 7 bottles of beer.
-Take one down and pass it around, 6 bottles of beer on the wall.
+Take one down and pass it around, one six pack of beer on the wall.
 
-6 bottles of beer on the wall, 6 bottles of beer.
+One six pack of beer on the wall, one six pack of beer.
 Take one down and pass it around, 5 bottles of beer on the wall.
 
 5 bottles of beer on the wall, 5 bottles of beer.
@@ -372,5 +372,13 @@ No more bottles of beer on the wall, no more bottles of beer.
 Go to the store and buy some more, 99 bottles of beer on the wall.
     SONG
     expect( song.sing ).to eq(expected)
+  end
+
+  it "can sing about a six pack" do
+    expected = <<-VERSE
+One six pack of beer on the wall, one six pack of beer.
+Take one down and pass it around, 5 bottles of beer on the wall.
+    VERSE
+    expect( song.verse(6) ).to eq( expected )
   end
 end
