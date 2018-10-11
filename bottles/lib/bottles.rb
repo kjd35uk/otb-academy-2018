@@ -1,4 +1,12 @@
 class Bottles
+  def sing
+    verses(99, 0)
+  end
+
+  def verses(start, finish)
+    start.downto(finish).map { |number| verse(number) }.join("\n")
+  end
+
   def verse(number)
     case number
     when 0

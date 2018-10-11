@@ -45,7 +45,6 @@ Go to the store and buy some more, 99 bottles of beer on the wall.
   end
 
   it "can string a couple of verses together" do
-    skip
     expected = <<-VERSES
 99 bottles of beer on the wall, 99 bottles of beer.
 Take one down and pass it around, 98 bottles of beer on the wall.
@@ -57,7 +56,6 @@ VERSES
   end
 
   it "can string a few verses together" do
-    skip
     expected = <<-VERSES
 2 bottles of beer on the wall, 2 bottles of beer.
 Take one down and pass it around, 1 bottle of beer on the wall.
@@ -72,7 +70,6 @@ VERSES
   end
 
   it "can sing the whole song" do
-    skip
     expected = <<-SONG
 99 bottles of beer on the wall, 99 bottles of beer.
 Take one down and pass it around, 98 bottles of beer on the wall.
